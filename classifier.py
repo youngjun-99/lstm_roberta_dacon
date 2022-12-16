@@ -6,11 +6,10 @@ from transformers.models.roberta.modeling_roberta import RobertaModel, RobertaPr
 from transformers.modeling_outputs import SequenceClassifierOutput
 
 class RobertaForSequenceClassification(RobertaPreTrainedModel):
-    def __init__(self, config, weights):
+    def __init__(self, config):
         super().__init__(config)
         self.num_labels = config.num_labels
         self.config = config
-        self.weights = weights
 
         self.roberta = RobertaModel(config)
         classifier_dropout = config.hidden_dropout_prob
@@ -68,7 +67,7 @@ class RobertaForSequenceClassification(RobertaPreTrainedModel):
                 if len(labels.size()) == len(logits.size()):
                     loss = softXEnt(logits.view(-1, self.num_labels), labels)
                 else:
-                    loss_fct = CrossEntropyLoss(weight=self.weights)
+                    loss_fct = CrossEntropyLoss()
                     loss = loss_fct(logits.view(-1, self.num_labels), labels.view(-1))
                 # print(loss)
 
