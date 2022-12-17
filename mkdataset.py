@@ -62,7 +62,7 @@ class EmotionDataset(Dataset):
         return labels
 
 class TimeDataset(Dataset):
-    label2idx = {"과거": 0, "현재": 1, "미래": 2, "예측형": 3}
+    label2idx = {"과거": 0, "현재": 1, "미래": 2}
 
     def __init__(self, data, tokenizer):
         self.data = data
