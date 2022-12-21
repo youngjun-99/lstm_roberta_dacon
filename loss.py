@@ -57,7 +57,7 @@ class AngularPenaltySMLoss(nn.Module):
 
         wf = self.fc(x)
         if self.loss_type == 'cosface':
-            numerator = self.s * (torch.diagonal(wf.transpose(0, 1)[labels]).cuda() - self.m)
+            numerator = self.s * (torch.diagonal(wf.transpose(0, 1)[labels]) - self.m)
         if self.loss_type == 'arcface':
             numerator = self.s * torch.cos(torch.acos(torch.clamp(torch.diagonal(wf.transpose(0, 1)[labels]), -1.+self.eps, 1-self.eps)) + self.m)
         if self.loss_type == 'sphereface':
