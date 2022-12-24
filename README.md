@@ -23,7 +23,7 @@
 ## Score
 
 - Public score : 74.78 (35th in last) (with koElectra ensemble seed = 777)
-- Private score : non checked (it isn't public 6th)
+- Private score : non checked (it isn't public 6th solved)
 
 ## Future works
 
