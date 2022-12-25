@@ -10,11 +10,13 @@
 ## Requirements
 
 - transformers
-- pandas
-- numpy
-- torch
-- scikit-learn
-- tqdm
+- pandas == 1.3.5
+- numpy == 1.21.6
+- torch == 1.13.1+cu116
+- scikit-learn == 1.0.2
+- tqdm == 4.64.1
+- pyperclip == 1.8.2
+- selenium == 4.7.2
 
 ## Metric
 
